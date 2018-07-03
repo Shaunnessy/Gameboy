@@ -1,2 +1,3 @@
-# Web
-Javascript, JSON, JSnode
+# Gameboy Project
+
+Building simple gameboy emulator.
