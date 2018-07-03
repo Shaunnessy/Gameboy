@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+	<title>Gameboy</title>
+	<meta lang="eng" content="fakeass emulator"/>
+
+	<script type="text/javascript" src="generic.js"></script>
+	<script type="text/javascript" src="gameboy.js"></script>
+	<script type="text/javascript" src="pong.js"></script>
+	<link rel="stylesheet" href="gameboy.css"/>
+	<!--
+		Gameboy Design Plan
+
+		1. HTML/CSS Replica Gameboy - Rev 1.0 complete
+		2. Screen Pixel Draw
+			2.1 Constraints function
+			2.2 Objects
+			2.3 Foreground, Background distinction
+		3. Button Functions 
+		6. Separate - Screen Object Design
+			6.1 Font Class - Rev 1.0 complete
+			6.2 Drawn Objects
+			6.3 JSON converter
+		4. Build "test module with Pokemon battle screen"
+		5. Profit??!?!
+
+		thoughts...
+
+		 should set up a model - view - controller  interaction?
+
+	-->
+	
+</head>
+<body>
+
+<!-- container for gameboy  -->
+
+<div id="gameboyback">
+
+	<div id="powerswitch" onclick="power()" value="off	"></div>
+
+	<div id="gameboyfront">	
+		<div id="screencontainer">
+
+			<div id="topofscreen">
+				<p id="dotmatrix">DOT MATRIX WITH STEREO SOUND</p>
+			</div>
+
+			<div id="power">
+				<div id="powerled"></div>
+				<p id="powerlogo">BATTERY</p>
+			</div>
+
+			<div id="screen"></div>
+
+		</div>
+
+		<div id="nintendologo">
+			<h3 class="logo">Nintendo <span id="logo">GAMEBOY</span><span id="TM">TM</span></h3>
+		</div>
+
+		<table id="buttontop">
+			<td class="dpadcontainer">
+				<table id="DPAD">
+					<tr class="dpadrow">
+						<td class="dpadelement"></td>
+						<td class="dpadelement"id="UP" ></td>
+						<td class="dpadelement"></td>
+					</tr>
+					<tr class="dpadrow">
+						<td class="dpadelement" id="LEFT"></td>
+						<td class="dpadelement" id="CENTER">
+							<div id="dpadcentercircle"></div>
+						</td>
+						<td class="dpadelement" id="RIGHT"></td>
+					</tr>
+					<tr class="dpadrow">
+						<td class="dpadelement"></td>
+						<td class="dpadelement" id="DOWN"></td>
+						<td class="dpadelement"></td>
+					</tr>
+				</table>
+			</td>
+
+			<td id="buttontopmiddlespace"></td>
+
+			<td>
+					<table id="topbuttonright">	
+						<td class="buttoncontainer">
+							<div class="roundbutton" id="DMG02" onclick="input(this)"></div><br>
+							B
+						</td>
+						<td class="buttoncontainer">
+							<div class="roundbutton" id="DMG01" onclick="input(this)"></div><br>
+							A
+						</td>
+					</table>
+				
+			</td>
+		</table>
+
+		<table id="buttonbottom">
+			<td id="bottombuttonleft"></td>
+			<td class="longbuttoncontainer">
+				<div id="buttonandtext">
+				<div class="longbutton" id="select"></div>
+				SELECT
+				</div>
+			</td>
+			<td class="longbuttoncontainer">
+				<div id="buttonandtext">
+				<div class="longbutton" id="start"></div>
+				START
+				</div>
+			</td>
+
+			<td class="bottomrow" id="speakercontainer">
+				<div class="speakerslot">
+					<div class="speakerhole"></div>
+				</div>
+				<div class="speakerslot">
+					<div class="speakerhole"></div>
+				</div>
+				<div class="speakerslot">
+					<div class="speakerhole"></div>
+				</div>
+				<div class="speakerslot">
+					<div class="speakerhole"></div>
+				</div>
+				<div class="speakerslot">
+					<div class="speakerhole"></div>
+				</div>
+				<div class="speakerslot">
+					
+				</div>
+			</td>
+		</table>
+	
+	</div>
+</div>
+
+<!-- Gameboy container *end* -->
+
+
+
+
+<!-- temporary UI element testing -->
+
+<div class="testbuttons">
+	
+	<button type="button" id="DMG02" onclick="test()">Generic Test Button</button>
+	<button type="button" id="SEL01" onclick="pong_game()">Pong Game Test Button</button>
+
+</div>
+
+
+<!-- container bottom for gameboy
+	</div>
+</div>
+-->
+</body>

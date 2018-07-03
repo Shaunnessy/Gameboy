@@ -1,0 +1,411 @@
+/* GameBoy Classic 
+	
+	size Ratio(based off of screen pixel to mm count):
+		*app. ratio = 3.2 pixel per 1mm*
+
+	Gameboy Case	
+ 		size =  90 mm (W) × 148 mm (H)
+		pixelcount = 288 (W) x 473 (H)
+	screen 
+		real size = 66 mm diagonal
+		pixelcount = 144 (W) x 160 (H)
+	
+	button(a & b) 
+		size = 10.5mm diameter(11mm app. will be made)
+		pixelcount = 35 x 35 w/ radius of 18
+		color = rgb(137,12,88)
+	button(select & start)	
+		
+		color = rgb(193,175,229)
+
+*/
+
+
+/*----- Divider index 01, Gameboy System CSS -----*/
+
+
+#gameboyback{
+
+	height: 483px;
+	width: 298px;
+
+	border-radius: 10px;
+	border-bottom-right-radius: 60px;
+	border-bottom-width: 10px;
+	border-right-width: 10px;
+}
+#powerswitch{
+	position: absolute;
+
+	height: 30px;
+	width: 10px;
+
+	background-color: black;
+
+	border-radius: 3px;
+
+	margin-top: 50px;
+	margin-left: 5px;
+
+
+}
+
+
+#gameboyfront{
+
+	background-color: rgb(210, 210, 210);
+	height: 473px; 
+	width: 288px;
+	border-radius: 10px;
+	border-style: outset;
+	border-bottom-right-radius: 60px;
+	border-bottom-width: 10px;
+	border-right-width: 10px;
+	position: absolute;
+	margin-left: 10px;
+}
+
+/*---- Divider index 02, Screenbox CSS -----*/
+
+#screencontainer{
+
+	margin-top: 20px;
+	margin-left: 10px;
+	height: 195px;
+	width: 260px;
+	background-color: rgb(150, 150, 150);
+	display: inline-block;
+	border-style: ridge;
+	border-color: rgb(120, 120, 120);
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+
+}
+#dotmatrix{
+
+	text-align: right;
+	font-size: 6px;
+	font-style: sans-serif;
+	color:rgb(220,220,220);
+	margin-right: 40px;
+	margin-top: 5px;
+}
+#power{
+
+	height: 10px;
+	width: 10px;
+	margin-left: 10px;
+	margin-top: 50px;
+	font-size: 6px;
+	color: rgb(220,220,220);
+	float: left;
+	
+}
+#powerled{
+
+	height: 5px;
+	width: 5px;
+	border-style: inset;
+	border-radius: 5px;
+	border-color: rgb(150,20,20);
+	background-color: rgb(200,20,20);
+	float: top-center;
+	margin-bottom:2px;
+	margin-left: 8px;
+
+
+
+}
+#screen{
+
+	border-style: outset;
+	border-radius: 1px;
+	border-color: rgb(75, 90, 15);
+
+	height: 144px;
+	width: 160px;
+	float: right;
+	margin-right: 40px;
+	background-color: rgb(105, 138, 15);
+
+	text-align: center;
+
+	display: grid;
+	grid-gap: none	;
+	grid-column: 160;
+	grid-row: 144;
+	grid-template-columns: 1px;
+
+}
+
+#nintendologo{
+
+	height: 20px;
+	float: relative;
+	margin-left: 18px;
+	text-align: left;
+	font-size: 10px;
+	font-style: sans-serif;
+	color: rgb(32,14,160);
+}
+#logo{
+
+	font-size: 16px;
+	letter-spacing: 2px;
+	font: Helvetica;
+}
+#TM{
+
+	font-size: 6px;
+	letter-spacing: 1px;
+}
+
+/*----- Divider Index 03, Button Elements -----*/
+
+#buttontop{
+
+	height: 80px;
+	margin-top: 30px;
+	margin-left: 10px;
+	margin-right: 5px;
+	float: relative;
+	color: rgb(32,14,160);
+
+/* DPAD Properties 
+	RGB color palette:
+		normal: rgb(45,41,38);
+		shadow: rgb(15,11,8);
+		light: rgb(85,81,78);
+*/
+}
+td.dpadcontainer{
+
+	height: 81px;
+	width: 81px;
+	border-color: black;
+	border-width: 1px;
+
+}
+#DPAD{
+
+	border-spacing: 0px;
+}
+tr.dpadrow{
+
+
+
+}
+td.dpadelement{
+
+	height: 18px;
+	width: 18px;
+	border-width: 3px;
+}
+#UP{
+
+	background-color: rgb(45,41,38);
+	border-color: rgb(45,41,38);
+	border-style: outset;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	border-bottom-style: solid;
+	border-bottom-right-radius: 1px;
+	border-bottom-left-radius: 1px;
+
+}
+#LEFT{
+
+	background-color: rgb(45,41,38);
+	border-color: rgb(45,41,38);	
+	border-style: outset;
+	border-right-style: solid;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+
+}
+#DPADCENTER{
+
+	background-color: rgb(45,41,38);
+
+
+}
+#dpadcentercircle{
+
+	height: 8px;
+	width: 8px;
+	border-radius: 15px;
+	border-style: inset;
+	background-color: rgb(45,41,38);
+	border-color: rgb(55,51,48);
+	border-width: 5px;
+	margin-left: 2px;
+
+
+}
+#RIGHT{
+
+	background-color: rgb(45,41,38);
+	border-color: rgb(45,41,38);
+	border-style: outset;
+	border-left-style: solid;	
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-left-radius: 1px;
+	border-bottom-left-radius: 1px;
+
+}
+#DOWN{
+
+	background-color: rgb(45,41,38);
+	border-color: rgb(45,41,38);
+	border-style: outset;
+	border-top-style: solid;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 1px;
+	border-top-left-radius: 1px;
+}
+/* top row middle space */
+#buttontopmiddlespace{
+
+	width: 90px;
+	border-width: 1px;
+	border-color: black;
+}
+
+/* A & B button properties */
+#topbuttonright{
+
+
+}
+.buttoncontainer{
+
+	height: 81px;
+	width: 30px;
+	font-size: 10px;
+	text-align: center;
+	border-width: 1px;
+	border-color: black;
+	display: inline-block;
+	margin: auto;
+	transform: rotate(330deg);
+	padding: 3px;
+
+}
+
+div.roundbutton{
+
+	height: 20px;
+	width: 20px;
+	border-radius: 20px;
+	border-width: 5px;
+	border-style: outset;
+	border-color: rgb(137,12,88);
+	background-color: rgb(137,12,88);
+
+
+	
+}
+#DMG01{
+	margin-top: 10px;
+	margin-left: 5px;
+}
+#DMG02{
+
+	margin-top:30px;
+	margin-right:5px;
+
+}
+
+/* Select and Start button properties */
+#bottombuttonleft{
+
+	width:86px;
+	border-width: 1px;
+
+}
+#buttonbottom{
+
+	margin-left: 10px;	
+	font-size: 10px;
+	color: rgb(32,14,160);
+	text-align: center;
+}
+div.longbutton{
+
+	height: 6px;
+	width: 35px;
+	border-style: outset;
+	border-radius: 4px;
+	background-color: rgb(193,175,229);
+}
+td.longbuttoncontainer{
+
+	height: 20px;
+	width: 40px;
+	text-align: top;
+	font-size: 8px;
+	font-weight: 2px;
+	letter-spacing: 1px;
+	margin: auto;
+	border-color: black;
+	border-width: 1px;
+	transform: rotate(330deg);
+
+
+}
+#buttonandtext{
+
+	margin-bottom: 58px;
+}
+#select{
+
+
+}
+#start{
+
+}
+
+/*----- Divider Index 04, Misc. Gameboy Facade Elements -----*/
+
+/* Speaker */
+#speakercontainer{
+
+	height: 80px;
+	width: 80px;
+	border-width: 1px;
+	border-color: black;
+	float: right;
+	margin-top: 26px;
+	margin-left: 10px;
+	transform: rotate(330deg);
+	transform: 
+	
+}
+div.speakerslot{
+	height: 55px;
+	width: 2px;
+	border-radius: 2px;
+	border-style: inset;
+	border-color: rgb(180,180,180);
+	background-color: rgb(160,160,160);
+	margin-right: 2px;
+	margin-left: 2px;
+	float: right;
+
+}
+div.speakerhole{
+
+	width: 1px;
+	height: 30px;
+	border-radius: 1px;
+	background-color: rgb(0,0,0);
+
+}
+
+
+
