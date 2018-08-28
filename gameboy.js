@@ -1,5 +1,10 @@
 /*
+
+
 ----- GAMEBOY UI -----
+
+
+
 
 --- Screen Color Palette ---
 
@@ -135,16 +140,15 @@ var randomPixel = { color : function(p){
 
 
 					}, gameboyclassiccolor : function(p){
-
-						var grid = p.split(",");
-						p = document.getElementById(p);
-
-						var color = String(oC[Math.floor(Math.random() * 4) + 1]);
+						
+						var grid = p.split(":");
+						var p = document.getElementById(p);
+						var color = String(oC[Math.floor(Math.random() * 4)]);
 
 						p.style.backgroundColor = color;
-						p.style.gridRow = grid[0] + "/span 1";
-						p.style.gridColumn = grid[1] + "/span 1";
-						p.style.backgroundSize = "1px 1px";	
+					//	p.style.gridRow = grid[0] + "/span 1";
+					//	p.style.gridColumn = grid[1] + "/span 1";
+					//	p.style.backgroundSize = "1px 1px";	
 
 
 					},new : function(){
@@ -183,16 +187,37 @@ var randomPixel = { color : function(p){
 						
 
 						return;
-					}, change : function(s){
+					}, change : function(){
 
-							s = s.childNodes;
+							var s = document.getElementById("screen").childNodes;
+							var c = 0;
 
 							s.forEach(function(item){
+					
+									bgColor = window.getComputedStyle(item, null).getPropertyValue("background-color");
+									if(bgColor !== oC[0]){
+										randomPixel.gameboyclassiccolor(item.id);
+									}else{
+										c++;
+									}
 
-									randomPixel.gameboyclassiccolor(item.id);
 								}
 
 							)
+							
+							if(c == 23040){  //stopping interval
+
+								console.log("c = 23040");
+								clearInterval(interval);
+
+							}else if(c < 23040){
+
+							
+								console.log(c, " is < ", 23040);
+							}else{
+								console.log("what why even this?");
+								return;
+							}
 
 					}
 				};
@@ -202,8 +227,8 @@ function newpixel(){
 	children = screen.childElementCount;
 		console.log(children);
 	if(children == 23040){
-
-		randomPixel.change(screen);
+		document.getElementById("powerswitch").addEventListener("click", power);
+		var interval = setInterval(change, 16.67);
 
 	}else if(children == 0){
 	
@@ -212,9 +237,47 @@ function newpixel(){
 	}
 	console.log("finish");
 	console.log();
+	function change(){
+
+							var s = document.getElementById("screen").childNodes;
+							var c = 0;
+
+							s.forEach(function(item){
+					
+									bgColor = window.getComputedStyle(item, null).getPropertyValue("background-color");
+									if(bgColor !== oC[0]){
+										randomPixel.gameboyclassiccolor(item.id);
+									}else{
+										c++;
+									}
+
+								}
+
+							)
+							
+							if(c == 23040){  //stopping interval
+
+								console.log("c = 23040");
+								clearInterval(interval);
+
+							}else if(c < 23040){
+
+							
+							//	console.log(c, " is < ", 23040);
+							}else{
+								console.log("what why even this?");
+								return;
+							}
+
+					}
+				
 
 	return;
+
 }
+
+
+
 function font(){
 
 	tA = document.getElementById("text").value;
@@ -258,6 +321,7 @@ function power(){
 		newState = [1,0,4];
 		p = true;
 		newpixel();
+
 	}else if(p == true){
 		newState = [2,4,5];
 		p = false;
@@ -276,6 +340,8 @@ function power(){
 	pSwitch.marginTop = ledSwitch[newState[2]];
 
 	console.log("Gameboy active state is now: ",p);
+
+	  //run logo before loading program
 
 	return;
 

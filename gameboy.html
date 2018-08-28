@@ -3,9 +3,7 @@
 	<title>Gameboy</title>
 	<meta lang="eng" content="fakeass emulator"/>
 
-	<script type="text/javascript" src="generic.js"></script>
-	<script type="text/javascript" src="gameboy.js"></script>
-	<script type="text/javascript" src="pong.js"></script>
+
 	<link rel="stylesheet" href="gameboy.css"/>
 	<!--
 		Gameboy Design Plan
@@ -63,15 +61,15 @@
 				<table id="DPAD">
 					<tr class="dpadrow">
 						<td class="dpadelement"></td>
-						<td class="dpadelement"id="UP" ></td>
+						<td class="dpadelement"id="UP"></td>
 						<td class="dpadelement"></td>
 					</tr>
 					<tr class="dpadrow">
-						<td class="dpadelement" id="LEFT"></td>
+						<td class="dpadelement" id="LEFT" onclick="move(this.id)"></td>
 						<td class="dpadelement" id="CENTER">
 							<div id="dpadcentercircle"></div>
 						</td>
-						<td class="dpadelement" id="RIGHT"></td>
+						<td class="dpadelement" id="RIGHT" onclick="move(this.id)"></td>
 					</tr>
 					<tr class="dpadrow">
 						<td class="dpadelement"></td>
@@ -102,13 +100,13 @@
 			<td id="bottombuttonleft"></td>
 			<td class="longbuttoncontainer">
 				<div id="buttonandtext">
-				<div class="longbutton" id="select"></div>
+				<div class="longbutton" id="select" onclick="move(this.id)"></div>
 				SELECT
 				</div>
 			</td>
 			<td class="longbuttoncontainer">
 				<div id="buttonandtext">
-				<div class="longbutton" id="start"></div>
+				<div class="longbutton" id="start" onclick="move(this.id)"></div>
 				START
 				</div>
 			</td>
@@ -147,8 +145,9 @@
 
 <div class="testbuttons">
 	
-	<button type="button" id="DMG02" onclick="test()">Generic Test Button</button>
-	<button type="button" id="SEL01" onclick="pong_game()">Pong Game Test Button</button>
+	<button type="button" id="tester" onclick="screensaver()">Generic Test Button</button>
+	<button type="button" id="test02" onclick="startGame()">Pong Game Test Button</button>
+	<button type="button" id="Test03" onclick="word()">Test Font</button>
 
 </div>
 
@@ -157,4 +156,11 @@
 	</div>
 </div>
 -->
+	<script type="text/javascript" src="generic.js"></script>
+	<script type="text/javascript" src="gameboy.js"></script>
+	<script type="text/javascript" src="gbscreen.js"></script>
+	<script type="text/javascript" src="pong2.js"></script>
+
+
 </body>
+</html>
